@@ -17,8 +17,8 @@ simplitron <- function(X, y, max_iteration, eta_0, w_0, eta_fn = "linear") {
     )
     
     for (i in 1:n) {
-      if(y[i] * w %*% X_pos[,i] <= 0) {
-        w <- w + eta * 1 * X_pos[,i]
+      if(y[i] * w %*% X[,i] <= 0) {
+        w <- w + eta * y[i] * X[,i]
       }
     }
   }
