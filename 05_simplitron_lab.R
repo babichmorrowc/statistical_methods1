@@ -1,7 +1,6 @@
 library(ggplot2)
 library(dplyr)
-library(Rfast)
-source("simplitron_function.R")
+source("perceptron_functions.R")
 
 # Simplitron on random dataset -------------------------------------------------
 # Set dimensions
@@ -64,8 +63,6 @@ ggplot() +
   geom_point(aes(x = input_Xy[1,], y = input_Xy[2,], color = input_Xy[3,])) +
   geom_abline(slope = -simp_coef[1] / simp_coef[2], intercept = -simp_coef[3] / simp_coef[2]) +
   labs(x = "Dim 1", y = "Dim 2")
-
-# SVM --------------------------------------------------------------------------
 
 
 

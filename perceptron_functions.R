@@ -28,7 +28,7 @@ simplitron <- function(X, y, max_iteration, eta_0, w_0, eta_fn = "linear") {
 }
 
 # SVM perceptron function ------------------------------------------------------
-svm_perceptron <- function(X, y, max_iteration, eta_0, w_0, c, eta_fn = "linear") {
+svm_perceptron <- function(X, y, max_iteration, eta_0, w_0, eta_fn = "linear") {
   if(!(eta_fn %in% c("linear", "quadratic", "sqrt"))) {
     stop("eta_fn must be one of linear, quadratic, or sqrt")
   }
@@ -48,7 +48,7 @@ svm_perceptron <- function(X, y, max_iteration, eta_0, w_0, c, eta_fn = "linear"
     
     for (i in 1:n) {
       if(y[i] * w %*% X[,i] <= 1) {
-        w <- w + eta * y[i] * X[,i] - 2 * eta * w * c
+        w <- w + eta * y[i] * X[,i] - 2 * eta * w/n * 110
       }
     }
   }
